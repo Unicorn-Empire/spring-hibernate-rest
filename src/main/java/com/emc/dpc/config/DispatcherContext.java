@@ -138,15 +138,21 @@ public class DispatcherContext extends WebMvcConfigurerAdapter {
     public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
     	
     	MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter(new CustomObjectMapper());
-    	List<MediaType> mediaTypes = new ArrayList<MediaType>();
-    	mediaTypes.add(MediaType.APPLICATION_JSON);
-    	converter.setSupportedMediaTypes(mediaTypes);
+    	List<MediaType> jsonMediaTypes =new ArrayList<MediaType>();
+    	jsonMediaTypes.add(MediaType.APPLICATION_JSON);
+    	converter.setSupportedMediaTypes(jsonMediaTypes);
       	converters.add(converter);
+      	
+      	
     }
 
 	@Override
 	public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
-		configurer.favorPathExtension(false).favorParameter(true);
+		configurer.favorPathExtension(false).favorParameter(true)
+		.mediaType("xml", MediaType.APPLICATION_XML)
+		.mediaType("json", MediaType.APPLICATION_JSON)
+		.ignoreUnknownPathExtensions(true)
+		.ignoreAcceptHeader(true);
 	}
 	
 	@Bean public ViewResolver resolver()
