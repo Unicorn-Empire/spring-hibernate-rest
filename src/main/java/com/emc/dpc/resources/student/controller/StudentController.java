@@ -41,6 +41,6 @@ public class StudentController {
 	@RequestMapping(method= RequestMethod.PATCH)
 	public void updateStudent(@RequestBody Student student)
 	{
-		studentService.
+		studentService.updateStudent(student);
 	}
 }
