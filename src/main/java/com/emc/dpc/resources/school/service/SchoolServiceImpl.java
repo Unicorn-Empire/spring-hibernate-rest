@@ -4,14 +4,8 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-
-
-
-
 
 import com.emc.dpc.resources.employee.domain.Employee;
 import com.emc.dpc.resources.school.dao.SchoolDAO;

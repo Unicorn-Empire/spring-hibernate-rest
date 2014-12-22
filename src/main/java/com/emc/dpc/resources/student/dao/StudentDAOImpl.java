@@ -7,6 +7,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.emc.dpc.resources.school.domain.Dept;
 import com.emc.dpc.resources.student.domain.Student;
 
 @Repository
@@ -57,5 +58,12 @@ public class StudentDAOImpl implements StudentDAO{
 	{
 		Session session = sessionFactory.getCurrentSession();
 		session.update(student);
+	}
+
+	@Override
+	public List<Student> getStudents(Dept dept) {
+
+		Session session = sessionFactory.getCurrentSession();
+		return session.createQuery("from Student where dept ="+dept.ordinal()).list();
 	}
 }

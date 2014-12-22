@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.emc.dpc.resources.school.domain.Dept;
 import com.emc.dpc.resources.student.dao.StudentDAO;
 import com.emc.dpc.resources.student.domain.Student;
 
@@ -41,6 +42,11 @@ public class StudentServiceImpl implements StudentService{
 	public void updateStudent(Student student) {
 		
 		studentDao.updateStudent(student);
+	}
+
+	@Override
+	public List<Student> getStudents(Dept dept) {
+		return studentDao.getStudents(dept);
 	}
 
 }

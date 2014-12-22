@@ -61,5 +61,4 @@ public class SchoolDAOImpl implements SchoolDAO{
 		sessionfactory.getCurrentSession().merge(school);
 	}
 	
-
 }

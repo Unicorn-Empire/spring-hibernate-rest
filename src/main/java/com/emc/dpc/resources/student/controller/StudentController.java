@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.emc.dpc.resources.school.domain.Dept;
 import com.emc.dpc.resources.student.domain.Student;
 import com.emc.dpc.resources.student.service.StudentService;
 
@@ -43,4 +44,12 @@ public class StudentController {
 	{
 		studentService.updateStudent(student);
 	}
+	
+	@RequestMapping(value="dept/{dept}")
+	public List<Student> getStudentsFromDept(@PathVariable Dept dept)
+	{
+		return studentService.getStudents(dept);
+		
+	}
+	
 }
