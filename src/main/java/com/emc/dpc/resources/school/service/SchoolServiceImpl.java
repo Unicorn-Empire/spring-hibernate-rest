@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 
 
 
@@ -62,6 +64,13 @@ public class SchoolServiceImpl implements SchoolService{
 	@Override
 	public void updateSchoolDetails(School school) {
 		schoolDao.updateSchoolDetails(school);
+	}
+
+	@Override
+	public List<Student> getStudents() {
+		List<Student> students = schoolDao.getSchoolDetails().getStudents();
+		int size = 	students.size();	
+		return students;
 	}
 	
 

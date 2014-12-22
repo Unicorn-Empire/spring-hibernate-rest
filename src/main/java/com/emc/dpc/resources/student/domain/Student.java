@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.emc.dpc.resources.school.domain.Dept;
 import com.emc.dpc.resources.school.domain.Grade;
 
 @Entity
@@ -17,8 +18,8 @@ public class Student {
 	private int rollNo;
 	private String name;
 	private Grade grade;
+	private Dept dept ; 
 	
-		
 	public int getId() {
 		return id;
 	}
@@ -43,7 +44,10 @@ public class Student {
 	public void setGrade(Grade grade) {
 		this.grade = grade;
 	}
-	
-	
-	
+	public Dept getDept() {
+		return dept;
+	}
+	public void setDept(Dept dept) {
+		this.dept = dept;
+	}
 }

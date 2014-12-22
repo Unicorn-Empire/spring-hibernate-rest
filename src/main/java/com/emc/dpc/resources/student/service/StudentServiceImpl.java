@@ -36,5 +36,11 @@ public class StudentServiceImpl implements StudentService{
 		
 		studentDao.enrollStudents(students);
 	}
+	
+	@Override
+	public void updateStudent(Student student) {
+		
+		studentDao.updateStudent(student);
+	}
 
 }

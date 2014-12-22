@@ -12,6 +12,7 @@ import javax.persistence.Table;
 
 import com.emc.dpc.resources.employee.domain.Employee;
 import com.emc.dpc.resources.student.domain.Student;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table
@@ -21,8 +22,10 @@ public class School {
 	@GeneratedValue
 	private int id;
 	@OneToMany(cascade=CascadeType.ALL,fetch= FetchType.LAZY)
+	@JsonIgnore
 	private List<Student> students;
 	@OneToMany(cascade=CascadeType.ALL,fetch= FetchType.LAZY)
+	@JsonIgnore
 	private List<Employee> staff;
 	
 	public int getId() {

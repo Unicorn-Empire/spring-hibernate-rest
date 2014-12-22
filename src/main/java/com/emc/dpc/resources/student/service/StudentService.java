@@ -13,5 +13,6 @@ public interface StudentService {
 	List<Student> getStudents();
 	void enrollStudent(Student student);
 	void enrollStudents(List<Student> students);
+	void updateStudent(Student student);
 	
 }
