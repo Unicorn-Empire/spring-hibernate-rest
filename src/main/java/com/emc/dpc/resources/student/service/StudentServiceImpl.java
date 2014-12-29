@@ -49,4 +49,19 @@ public class StudentServiceImpl implements StudentService{
 		return studentDao.getStudents(dept);
 	}
 
+	@Override
+	public List<Student> getStudents(Dept dept, int rollNo) {
+		return studentDao.getStudents(dept,rollNo);
+
+	}
+
+	@Override
+	public void enrollStudents(List<Student> students, Dept dept) {
+		for (Student student : students) {
+			student.setDept(dept);
+		}
+		
+		studentDao.enrollStudents(students);
+	}
+
 }

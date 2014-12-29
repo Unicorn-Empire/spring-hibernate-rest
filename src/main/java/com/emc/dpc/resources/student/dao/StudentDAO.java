@@ -13,5 +13,6 @@ public interface StudentDAO {
 	void enrollStudents(List<Student> students);
 	void updateStudent(Student student);
 	List<Student> getStudents(Dept dept);
+	List<Student> getStudents(Dept dept, int rollNo);
 	
 }

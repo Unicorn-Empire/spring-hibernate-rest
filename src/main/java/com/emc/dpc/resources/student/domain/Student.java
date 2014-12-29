@@ -7,6 +7,7 @@ import javax.persistence.Table;
 
 import com.emc.dpc.resources.school.domain.Dept;
 import com.emc.dpc.resources.school.domain.Grade;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table
@@ -14,7 +15,10 @@ public class Student {
 
 	@Id
 	@GeneratedValue
+	@JsonIgnore
 	private int id;
+
+	private int enrollNo;
 	private int rollNo;
 	private String name;
 	private Grade grade;
@@ -25,6 +29,13 @@ public class Student {
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	
+	public int getEnrollNo() {
+		return enrollNo;
+	}
+	public void setEnrollNo(int enrollNo) {
+		this.enrollNo = enrollNo;
 	}
 	public int getRollNo() {
 		return rollNo;

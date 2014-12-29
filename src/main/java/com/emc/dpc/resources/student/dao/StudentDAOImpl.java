@@ -66,4 +66,10 @@ public class StudentDAOImpl implements StudentDAO{
 		Session session = sessionFactory.getCurrentSession();
 		return session.createQuery("from Student where dept ="+dept.ordinal()).list();
 	}
+
+	@Override
+	public List<Student> getStudents(Dept dept, int rollNo) {
+		Session session = sessionFactory.getCurrentSession();
+		return session.createQuery("from Student where rollNo="+rollNo+" and dept ="+dept.ordinal()).list();
+	}
 }
