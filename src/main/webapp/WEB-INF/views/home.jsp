@@ -32,8 +32,7 @@
   <div id="grid" ui-grid="gridOptions1" class="grid"></div>
 </div>
 <div ng-controller="ModalDemoCtrl">
- 
-
+<br>
 <!--     <button class="btn btn-default" ng-click="open()">Open me!</button> -->
 <!--     <button class="btn btn-default" ng-click="open('lg')">Large modal</button> -->
     <button class="btn btn-default" ng-click="open('sm')">Add Student</button>
